@@ -58,38 +58,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "auth_invalid_empty"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "auth_invalid_sql"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: ""
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -150,16 +118,6 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: false
-  matches: []
 - type: "sql_injection_timebound"
   assertions:
   - "@ResponseTime > 7000"
@@ -169,6 +127,16 @@ generators:
   database:
     name: "MySQL"
     version: "5.7"
+  inactive: false
+  matches: []
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
   inactive: false
   matches: []
 - type: "log_Forging"
@@ -237,3 +205,35 @@ generators:
   database: null
   inactive: false
   matches: []
+- type: "auth_invalid_empty"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "auth_invalid_sql"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: ""
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
